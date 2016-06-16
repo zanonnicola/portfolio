@@ -1,0 +1,175 @@
+.wrapper {
+	max-width: $maxWidth;
+	margin:0 auto;
+	padding:0 $padding/2;
+	position: relative;
+	@include breakpoint(widescreen) {
+		padding:0;
+	}
+}
+.career-wrapper {
+	max-width: 1000px;
+	margin:0 auto;
+	padding:0 $padding/2;
+	position: relative;
+	@include breakpoint(widescreen) {
+		padding:0;
+	}
+}
+.no-wrapper {
+	margin:0 auto;
+	padding:0 $padding/2;
+	position: relative;
+	@include breakpoint(widescreen) {
+		padding:0;
+	}
+}
+.content-wrapper {
+	max-width: 890px;
+	margin:0 auto;
+	padding:0 $padding/2;
+	@include breakpoint(desktop) {
+		padding:0 $padding;
+	}
+}
+.padded {
+	padding:0 $padding/2;
+	@include breakpoint(desktop) {
+		padding:0 $padding;
+	}
+}
+.row {
+	@include clearfix();
+}
+.grid {
+	@include clearfix();
+	overflow: hidden;
+	@include breakpoint(tablet) {
+    	margin-left: -$gutter; /* same as your gutter */
+	}
+}
+.grid__2 {
+	@include clearfix();
+	overflow: hidden;
+	@include breakpoint(tablet) {
+    	margin-left: -100px; /* same as your gutter */
+	}
+}
+.space {
+	margin-bottom:$padding;
+}
+.grid-col {
+	float: left;
+	width:100%;
+	@include breakpoint(tablet) {
+		padding-left: $gutter;
+	}
+}
+.grid-col__2 {
+	float: left;
+	width:100%;
+	@include breakpoint(tablet) {
+		padding-left: 100px;
+	}
+}
+
+.video-grid {
+	@include clearfix();
+	overflow: hidden;
+	@include breakpoint(mobile) {
+    	margin-left: -$gutter; /* same as your gutter */
+	}
+}
+.video-col {
+	float: left;
+	width:100%;
+	@include breakpoint(mobile) {
+		padding-left: $gutter;
+	}
+}
+
+.gallery-grid {
+	@include clearfix();
+	overflow: hidden;
+    margin-left: -5px; /* same as your gutter */
+}
+.gallery-col {
+	float: left;
+	width:100%;
+	padding-left: 5px;
+}
+.col-1-2 {
+	width:100%;
+	@include breakpoint(tablet) {
+		width:50%;
+	}
+}
+.col-1-4 {
+	width:100%;
+	@include breakpoint(tablet) {
+		width:50%;
+	}
+	@include breakpoint(desktop) {
+		width:25%;
+	}
+}
+.col-third {
+	width:50%;
+	@include breakpoint(tablet) {
+		width:33.3333%;
+	}
+}
+.col-1-3 {
+	width:100%;
+	@include breakpoint(tablet) {
+		width:33.3333%;
+	}
+}
+.col-3 {
+	width:100%;
+	@include breakpoint(mobile) {
+		width:33.3333%;
+	}
+}
+.col-70 {
+	width:100%;
+	@include breakpoint(tablet) {
+		width:70%;
+	}
+}
+.col-30 {
+	width:100%;
+	@include breakpoint(tablet) {
+		width:30%;
+	}
+}
+
+.box-1-3 {
+	width:100%;
+	@include breakpoint(mobile) {
+		display:table-cell;
+		width:33.3333%;
+	}
+}
+.box-1-2 {
+	width:100%;
+	@include breakpoint(tablet) {
+		display:table-cell;
+		width:50%;
+		vertical-align:middle;
+	}
+}
+.box-table {
+	width:100%;
+	display:block;
+	position: relative;
+	@include breakpoint(tablet) {
+		display:table;
+		width:100%;
+	}
+}
+.align-right {
+	@include breakpoint(tablet) {
+		text-align:right;	
+	}
+}

@@ -1,0 +1,524 @@
+@import "normalize.scss";
+@import "mixins.scss";
+@import "vars.scss";
+
+
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+@font-face {
+	font-family:'bt_mono';
+	src: url('../fonts/bt_mono-Bold_gdi.eot');
+	src: url('../fonts/bt_mono-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/bt_mono-Bold_gdi.woff') format('woff'),
+		url('../fonts/bt_mono-Bold_gdi.ttf') format('truetype'),
+		url('../fonts/bt_mono-Bold_gdi.svg#bt_mono-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family:'bt_mono';
+	src: url('../fonts/bt_mono-Regular_gdi.eot');
+	src: url('../fonts/bt_mono-Regular_gdi.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/bt_mono-Regular_gdi.woff') format('woff'),
+		url('../fonts/bt_mono-Regular_gdi.ttf') format('truetype'),
+		url('../fonts/bt_mono-Regular_gdi.svg#bt_mono-Regular') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+/* ==========================================================================
+   Resetting stuff
+   ========================================================================== */
+
+*, :before, :after {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+body {
+	background-color: #F2F1F1;
+	font-family:'bt_mono', Courier, monospace;
+	font-weight:400; 
+	font-style:normal;
+	margin:0;
+	padding:0;
+	color: $black;
+	@include font-size(1.6);
+	line-height:23px;
+	-webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  border:none;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Global
+   ========================================================================== */
+ul {
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration:none;
+	transition: color 0.5s ease;
+	outline: 0;
+}
+a:hover, a:active, a:focus { 
+	outline: none; 
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 700;
+	letter-spacing:1px;
+}
+.display-table {
+	display:table;
+	height: 100%;
+	width: 100%;
+	min-height:100%;
+}
+.centered {
+	text-align:center;
+}
+@import "layout.scss";
+
+/* ==========================================================================
+  Home Page
+  ========================================================================== */
+
+.top-nav {
+	padding:25px 0 0 0;
+}
+.splash-screen {
+	margin: 33vh 0;
+}
+.symbol {
+	font-weight: 700;
+	letter-spacing: -2px;
+	@include font-size(2);
+	line-height: 23px;
+	cursor:pointer;
+}
+.logo {
+	display:inline-block;
+	vertical-align:middle;
+	margin-right: 10px;
+	position: relative;
+	top: -25px;
+	z-index: 2;
+	a {
+		display:block;
+		transition:opacity 0.5s ease;
+		&:hover {
+			opacity:0.5;
+		}
+	}
+}
+.site-title {
+	display:inline-block;
+	vertical-align:middle;
+	h1 {
+		@include font-size(2.4);
+		letter-sapcing:4px;
+		line-height:28px;
+		text-transform:uppercase;
+		margin:0 0 5px 0;
+	}
+	h2 {
+		@include font-size(2);
+		line-height:23px;
+		font-weight:400;
+		margin: 0;
+		color: $grey;
+		& > span {
+			color: $pink;
+		}
+	}
+}
+.divider {
+	position: relative;
+	&:after {
+		content: "";
+		display:block;
+		border-top:1px solid $border;
+		position: absolute;
+		top:50%;
+		left:0;
+		width:100%;
+	}
+}
+.cta {
+	display:inline-block;
+	color: $grey;
+	font-weight: 700;
+	@include font-size(1.4);
+	line-height: 17px;
+	letter-spacing:2px;
+	padding:12px 16px;
+	border:1px solid $grey;
+	text-transform:uppercase;
+	transition: all 0.5s ease;
+	&:hover {
+		background-color: $pink;
+		color: #fff;
+		border: 1px solid $pink;
+	}	
+}
+/* ==========================================================================
+   Skills
+   ========================================================================== */
+
+.skills {
+	padding: $space 0;
+	border-bottom: 1px solid #DEDEDE;
+}
+.heading {
+	text-align:center;
+	@include font-size(4);
+	line-height:46px;
+	text-transform:uppercase;
+	margin:0 0 $space 0;
+}
+.flickity-nav {
+	text-align:center;
+	margin:0 0 $space 0;
+	li {
+		display:inline-block;
+		margin-right:10px;
+		@include breakpoint(mobile) {
+			margin-right:50px;
+		}
+		@include breakpoint(tablet) {
+			margin-right:110px;	
+		}
+		&:last-of-type {
+			margin-right:0;
+		}
+		a {
+			color: $grey;
+			@include font-size(1.6);
+			line-height: 19px;
+			padding-bottom:2px;
+			border-bottom:2px solid transparent;
+			transition:all 0.5s ease;
+			@include breakpoint(mobile) {
+				@include font-size(2);
+				line-height: 23px;
+			}
+			&.active {
+				font-weight: 700;
+				color: $black;
+				border-bottom:2px solid $pink;
+			}
+			&:hover {
+				border-bottom:2px solid $pink;
+			}
+		}
+	}
+}
+.list-title {
+	@include font-size(1.6);
+	line-height:18px;
+	letter-spacing:2px;
+	text-transform:uppercase;
+	margin:0 0 20px 0;
+}
+.skills-list {
+	margin-bottom:$space/2;
+	@include breakpoint(tablet) {
+		margin-bottom:0;
+	}
+}
+.panels {
+	display:none;
+}
+.visible {
+	display: block;
+}
+
+@import "_flickity.scss";
+
+
+/* ==========================================================================
+   Selected Works
+   ========================================================================== */
+
+.work {
+	background-color: #fff;
+	padding:($space + 20px) 0;
+	border-bottom: 1px solid #DEDEDE;
+}
+.gallery-item {
+	width:245px;
+	text-align:center;
+	margin-right: 50px;
+	@include breakpoint(tablet) {
+		margin-right: 100px;
+		width:284px;
+	}
+	> img {
+		display:inline-block;
+	}
+}
+.no-margin {
+	margin:0;
+}
+.gallery-item.g {
+	img {
+		box-shadow: 0 2px 4px 0 #004440;
+	}
+}
+.gallery-item.y {
+	img {
+		box-shadow: 0 2px 4px 0 #827556;
+	}
+}
+.gallery-item.p {
+	img {
+		box-shadow: 0 2px 4px 0 #8D0C3C;
+	}
+}
+.galley-item__content {
+	margin: 27px 0;
+	.date {
+		color: $grey;
+		font-weight: 700;
+		@include font-size(1.4);
+		line-height: 17px;
+	}
+	h3 {
+		@include font-size(1.8);
+		line-height: 21px;
+		text-transform:uppercase;
+		margin:25px 0 5px 0;
+	}
+	p {
+		margin:0 0 30px 0;
+		color: $grey;
+		font-weight: 700;
+		@include font-size(1.4);
+		line-height: 17px;
+	}
+}
+
+.flickity-page-dots .dot {
+	width: 100%;
+	max-width:95px;
+	height:4px;
+	background-color: #F2F1F1;
+	border-radius: 0;
+	opacity: 1px;
+}
+.flickity-page-dots .dot.is-selected {
+	background-color: $pink;
+}
+.green:hover {
+	background-color: #008D84;
+	border:1px solid #008D84;
+}
+.gold:hover {
+	background-color: #CDB782;
+	border:1px solid #CDB782;
+}
+.yellow:hover {
+	background-color: #CDBF76;
+	border:1px solid #CDBF76;
+}
+
+.view-all {
+	margin-top:55px;
+	text-align:center;
+	a {
+		color: $pink;
+		font-weight:700;
+		&:hover {
+			color: $grey;
+		}
+	}
+}
+/* ==========================================================================
+   Case Studies
+   ========================================================================== */
+
+.case-studies {
+	padding:($space + 20px) 0;
+	.box-1-2 {
+		margin-top: 50px;
+		@include breakpoint(tablet) {
+			margin:0;
+		}
+	}
+}
+.case-study {
+	h2 {
+		@include font-size(3.6);
+		line-height: 41px;
+		margin:0 0 10px 0;
+	}
+	.link {
+		display:block;
+		color: #047D5F;
+		font-weight:700;
+		@include font-size(2);
+		line-height: 23px;
+		@include font-size(1.6);
+		line-height: 18px;
+		@include breakpoint(mobile) {
+			@include font-size(2);
+			line-height: 23px;
+		}
+	}
+	.link-yellow {
+		color: #B59F30;
+	}
+	p {
+		color: $grey;
+		margin: 50px 0 30px 0;
+	}
+}
+.pad-left {
+	@include breakpoint(tablet) {
+		padding-left:40px;
+	}
+}
+.pad-right {
+	@include breakpoint(tablet) {
+		padding-right:40px;
+	}
+}
+
+
+/* ==========================================================================
+   About me
+   ========================================================================== */
+
+.about-me {
+	padding: $space 0;
+}
+.about-content {
+	max-width: 655px;
+	margin:0 auto;
+	text-align:center;
+	p:first-of-type {
+		margin-top:0;
+	}
+}
+
+/* ==========================================================================
+   Career
+   ========================================================================== */
+.career {
+	padding-bottom: $space;
+	.heading {
+		margin:0 0 $space/2 0;
+	}
+}
+.career-card {
+	position: relative;
+	padding: 10px 15px;
+	margin-top: 40px;
+	&:first-of-type {
+		margin-top: 20px;
+	}
+	@include breakpoint(mobile) {
+		padding: 25px 50px;	
+		margin-top: 80px;
+		&:first-of-type {
+			margin-top: 80px;
+		}
+	}
+	border: 1px solid $border;
+	
+	> p {
+		margin:0;
+		@include font-size(1.8);
+	}
+	h2 {
+		font-size: 3.2rem;
+    	line-height: 35px;
+		margin:30px 0 0 0;
+		@include breakpoint(mobile) {
+			@include font-size(4.8);
+			line-height:57px;
+			margin:50px 0 0 0;
+		}
+	}
+	h3 {
+		@include font-size(1.6);
+		line-height:20px;
+		color: $pink;
+		margin:10px 0 0 0;
+	}
+	ul {
+		margin: 75px 0 0 0;
+		li {
+			color: #ACA8A8;
+			margin-bottom:5px;
+			&:last-of-type {
+				margin-bottom:0;
+			}
+		}
+	}
+}
+.see-more {
+	margin-top: ($space - 40px);
+	text-align:center;
+	p {
+		color: $pink;
+		margin:0 0 40px 0;
+		font-weight:700;
+		@include font-size(2.4);
+		line-height:28px;
+	}
+}
+.numbers {
+	display:none;
+	@include breakpoint(tablet) {
+		display:block;
+		//background: url('../img/icons/c1.svg') no-repeat 0 0;
+		position: absolute;
+		top:-50px;
+		left:-66px;
+		z-index: 2;
+	}
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+	border-top:1px solid $border;
+	background: #fff;
+	padding:$space 0;
+}
+.name, .contact, .contact a {
+	@include font-size(1.4);
+	line-height: 17px;
+	color: $grey;
+}
+.contact a:hover {
+	color: $pink;
+}
+.contact {
+	margin-top:20px;
+	@include breakpoint(mobile) {
+		float: right;
+		margin-top:0
+	}
+}
+.name {
+	@include breakpoint(mobile) {
+		float: left;
+	}
+}

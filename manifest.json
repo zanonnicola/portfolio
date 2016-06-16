@@ -1,0 +1,13 @@
+{
+  "name": "Nicola Zanon Portfolio",
+  "short_name": "NZ Portfolio",
+  "icons": [{
+      "src": "img/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4F4F0",
+  "theme_color": "#CF4672"
+}
