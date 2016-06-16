@@ -38,7 +38,7 @@ var serviceWorker = function() {
         };
       };
     }).catch(function(err) {
-      // registration failed :(
+      // registration failed :( buuu
       console.log('ServiceWorker registration failed: ', err);
     });
   }

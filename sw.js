@@ -2,7 +2,7 @@ importScripts('./cache-polyfill.js');
 
 var cacheEls = [
 	'./',
-	'./index.php',
+	'./index.html',
 	'./css/global.css',
 	'./js/build/bundle.js',
 	'./fonts/bt_mono-Bold_gdi.svg',
