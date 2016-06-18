@@ -37,7 +37,6 @@
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
 }
-
 @mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
   background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
   background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
@@ -71,4 +70,17 @@
   @else if $point == widescreen {
     @media (min-width:1400px)  { @content; }
   }
+}
+
+@mixin setFont($mobileSize: 1.6, $desktopSize: 2, $bool: false) {
+  @include font-size($mobileSize);
+  @if $bool == true {
+    line-height: $mobileSize * 10 * 1.5px;
+  }
+  @include breakpoint(mobile) { 
+    @include font-size($desktopSize);
+    @if $bool == true {
+      line-height: $desktopSize * 10 * 1.5px;
+    }
+  } 
 }

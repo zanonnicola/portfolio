@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+	border-top:1px solid $border;
+	background: #fff;
+	padding:$space 0;
+	margin-top: $padding;
+}
+.name, .contact, .contact a {
+	@include font-size(1.4);
+	line-height: 17px;
+	color: $grey;
+}
+.contact a:hover {
+	color: $pink;
+}
+.contact {
+	margin-top:20px;
+	@include breakpoint(mobile) {
+		float: right;
+		margin-top:0
+	}
+}
+.name {
+	@include breakpoint(mobile) {
+		float: left;
+	}
+}

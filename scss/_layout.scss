@@ -7,36 +7,18 @@
 		padding:0;
 	}
 }
-.career-wrapper {
-	max-width: 1000px;
-	margin:0 auto;
-	padding:0 $padding/2;
-	position: relative;
-	@include breakpoint(widescreen) {
-		padding:0;
-	}
-}
 .no-wrapper {
-	margin:0 auto;
-	padding:0 $padding/2;
+	@include clearfix();
 	position: relative;
-	@include breakpoint(widescreen) {
-		padding:0;
-	}
-}
-.content-wrapper {
-	max-width: 890px;
-	margin:0 auto;
-	padding:0 $padding/2;
-	@include breakpoint(desktop) {
-		padding:0 $padding;
-	}
 }
 .padded {
 	padding:0 $padding/2;
 	@include breakpoint(desktop) {
 		padding:0 $padding;
 	}
+}
+.align-right {
+	text-align: right;
 }
 .row {
 	@include clearfix();
