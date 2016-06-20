@@ -10,6 +10,7 @@ var init = function() {
     link.attr("target", "_blank");
 
     browserSniffing();
+
 }
 
 serviceWorker();

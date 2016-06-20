@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-6-Plus" transform="translate(-374.000000, -1167.000000)" fill="#D4CFCF">
+            <g id="Works" transform="translate(20.000000, 1110.000000)">
+                <g id="site" transform="translate(35.000000, 56.000000)">
+                    <g id="ic_call_made_black_24px" transform="translate(319.000000, 1.000000)">
+                        <g id="Group">
+                            <polygon id="arrow" points="3.33333333 0 3.33333333 1.33333333 7.72666667 1.33333333 0 9.06 0.94 10 8.66666667 2.27333333 8.66666667 6.66666667 10 6.66666667 10 0"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

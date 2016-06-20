@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="19px" viewBox="0 0 27 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>icon4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-6-Plus" transform="translate(-303.000000, -961.000000)">
+            <g id="card-4" transform="translate(234.125138, 923.422609)">
+                <g id="Group-2" transform="translate(43.918228, 31.980522)">
+                    <g id="ic_multiline_chart_black_24px" transform="translate(22.788446, 0.000000)">
+                        <g id="icon4">
+                            <path d="M28.5356328,8.96491014 L26.7067582,7.13824493 L23.0100966,11.2968232 C20.3381237,8.29124638 16.6414622,6.47753623 12.4648832,6.47753623 C8.71633875,6.47753623 5.27909207,7.98032464 2.59414844,10.364058 L4.43599383,12.2036783 C6.64102,10.2733725 9.42972957,9.06855072 12.4648832,9.06855072 C16.0188666,9.06855072 19.066991,10.7008899 21.2460757,13.2659942 L17.510502,17.4634377 L12.3222051,12.2814087 L2.59414844,22.0106681 L4.53975976,23.953929 L12.3222051,16.1679304 L17.510502,21.3499594 L22.7636525,15.4554014 C23.7364582,17.2043362 24.3849953,19.2123725 24.6314394,21.3499594 L27.2385586,21.3499594 C26.9532023,18.3702928 26.0063381,15.6626826 24.5925272,13.3955449 L28.5356328,8.96491014 L28.5356328,8.96491014 Z" id="Shape" fill="#F75A91"></path>
+                            <polygon id="Shape" points="0 0 31.1297812 0 31.1297812 31.0921739 0 31.0921739"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
