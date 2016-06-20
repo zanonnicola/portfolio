@@ -22,21 +22,29 @@ $(document).ready(function($) { init(); });
 
 
 },{"./modules/browserSniffing":2,"./modules/serviceWorker.js":3,"jquery":4}],2:[function(require,module,exports){
+var $ = require('jquery');
+
 'use strict';
 
 var browserSniffing = function() {
-  var isSafari = /constructor/i.test(window.HTMLElement);
-  if(isSafari) {
-    $("html").addClass("safari");
-  };
-  var isFF = !!navigator.userAgent.match(/firefox/i);
-  if(isFF) {
-    $("html").addClass("firefox");
-  };
+	var isSafari = /constructor/i.test(window.HTMLElement);
+		if(isSafari) {
+		$("html").addClass("safari");
+	};
+		var isFF = !!navigator.userAgent.match(/firefox/i);
+		if(isFF) {
+		$("html").addClass("firefox");
+	};
+	function is_touch_device() {
+  		return 'ontouchstart' in window  || navigator.maxTouchPoints; 
+	};
+	if (is_touch_device()) {
+		$("html").addClass("touch");
+	};
 }
 
 module.exports = browserSniffing;
-},{}],3:[function(require,module,exports){
+},{"jquery":4}],3:[function(require,module,exports){
 'use strict';
 
 var serviceWorker = function() {
