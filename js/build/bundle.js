@@ -2,6 +2,7 @@
 var $ = require('jquery');
 var browserSniffing = require('./modules/browserSniffing');
 var serviceWorker = require('./modules/serviceWorker.js');
+var loadList = require('./modules/loadList.js');
 
 var init = function() {
     // Add class to indicate JS is working
@@ -11,6 +12,7 @@ var init = function() {
     link.attr("target", "_blank");
 
     browserSniffing();
+    loadList();
 
 }
 
@@ -21,7 +23,7 @@ $(document).ready(function($) { init(); });
 
 
 
-},{"./modules/browserSniffing":2,"./modules/serviceWorker.js":3,"jquery":4}],2:[function(require,module,exports){
+},{"./modules/browserSniffing":2,"./modules/loadList.js":3,"./modules/serviceWorker.js":4,"jquery":5}],2:[function(require,module,exports){
 var $ = require('jquery');
 
 'use strict';
@@ -44,7 +46,44 @@ var browserSniffing = function() {
 }
 
 module.exports = browserSniffing;
-},{"jquery":4}],3:[function(require,module,exports){
+},{"jquery":5}],3:[function(require,module,exports){
+var $ = require('jquery');
+
+'use strict';
+
+var loadList = function() {
+
+	var els = $(".hidden");
+	var listSize = els.length;
+	var loadMore = $("#loadMore");
+	var counter = 3;
+	var elHeight = $(".list-wrapper li")[0].getBoundingClientRect().height;
+
+	loadMore.on('click', function(event) {
+		event.preventDefault();
+
+		if (counter < els.length + 3) {
+			// Show the next 3 elements
+			$('.hidden:lt(' + counter + ')').fadeIn();
+			counter = counter + 3;
+
+			// Find the last visible element
+			var lastVisibileElm = els.filter(":visible").last();
+			var elPosition = lastVisibileElm.offset().top - (elHeight * 2);
+
+			$('body, html').animate({
+              scrollTop: elPosition
+            }, 800);
+
+		} else {
+			loadMore.fadeOut();
+		}
+	});
+
+}
+
+module.exports = loadList;
+},{"jquery":5}],4:[function(require,module,exports){
 'use strict';
 
 var serviceWorker = function() {
@@ -97,7 +136,7 @@ module.exports = serviceWorker;
 
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.2.4
  * http://jquery.com/

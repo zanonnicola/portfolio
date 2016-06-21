@@ -3,13 +3,21 @@
 	margin:0 auto;
 	padding:0 10px;
 	position: relative;
-	@include breakpoint(widescreen) {
-		padding:0;
+	@include breakpoint(tablet) {
+		padding:20px;
+	}
+	@include breakpoint(desktop) {
+		padding:0 $padding;
 	}
 }
 .no-wrapper {
 	@include clearfix();
 	position: relative;
+	@include breakpoint(desktop) {
+		padding:$padding;
+		max-width: $maxWidth;
+		margin:0 auto;
+	}
 }
 .padded {
 	padding:0 $padding/2;
@@ -35,7 +43,7 @@
 	overflow: hidden;
 	margin-left: -15px;
 	@include breakpoint(tablet) {
-    	margin-left: $gutter;
+    	margin-left: -$gutter;
 	}
 }
 .space {

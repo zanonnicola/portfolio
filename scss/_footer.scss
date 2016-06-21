@@ -6,7 +6,7 @@
 	border-top:1px solid $border;
 	background: #fff;
 	padding:$space 0;
-	margin-top: $padding;
+	margin-top: $padding*2;
 }
 .name, .contact, .contact a {
 	@include font-size(1.4);

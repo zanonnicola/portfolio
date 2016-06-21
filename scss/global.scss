@@ -274,6 +274,9 @@ h1,h2,h3,h4,h5,h6 {
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+		@include breakpoint(desktop) {
+			padding-left: $distance*2;
+		}
 	}
 }
 .highlight {
@@ -289,13 +292,20 @@ h1,h2,h3,h4,h5,h6 {
 		&:last-of-type {
 			margin-bottom: 0;
 		}
+		@include breakpoint(desktop) {
+			padding-left: $distance*2;
+		}
 	}
 }
 
 /* ==========================================================================
    SKILLS
    ========================================================================== */
-
+.left-distance {
+	@include breakpoint(desktop) {
+		padding-left: $distance*2;
+	}
+}
 .box__content {
 	background-color: #fff;
 	box-shadow: 0 2px 9px 3px rgba(192, 187, 187, .11);
@@ -304,6 +314,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 .grid__box {
 	padding-left: $distance;
+	@include breakpoint(tablet) {
+		padding-left: 0;
+	}
 	margin-top: 25px;
 }
 .grid__box + .grid__box  {
@@ -329,6 +342,9 @@ h1,h2,h3,h4,h5,h6 {
 	border-radius: $borderValue;
 	margin-top: 25px;
 	margin-left: $distance;
+	@include breakpoint(tablet) {
+		margin-left: 0;
+	}
 	li {
 		border-bottom: 1px solid $bg;
 		&:last-of-type {
@@ -380,6 +396,9 @@ h1,h2,h3,h4,h5,h6 {
 	.cta-wrapper {
 		margin: 0 auto;
 	}
+}
+.hidden {
+	display: none;
 }
 @import "animations.scss";
 @import "footer.scss";
