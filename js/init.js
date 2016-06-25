@@ -1,7 +1,9 @@
-var $ = require('jquery');
-var browserSniffing = require('./modules/browserSniffing');
-var serviceWorker = require('./modules/serviceWorker.js');
-var loadList = require('./modules/loadList.js');
+var $ 					= require('jquery');
+var browserSniffing 	= require('./modules/browserSniffing');
+var serviceWorker 		= require('./modules/serviceWorker.js');
+var loadList 			= require('./modules/loadList.js');
+var animateFLIP 		= require('./modules/animateFLIP.js');
+var pushNotification 	= require('./modules/pushNotification.js');
 
 var init = function() {
     // Add class to indicate JS is working
@@ -12,6 +14,8 @@ var init = function() {
 
     browserSniffing();
     loadList();
+    animateFLIP();
+    pushNotification();
 
 }
 

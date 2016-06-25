@@ -15,16 +15,19 @@ var loadList = function() {
 
 		if (counter < els.length + 3) {
 			// Show the next 3 elements
-			$('.hidden:lt(' + counter + ')').fadeIn();
+			$('.hidden:lt(' + counter + ')').fadeIn(400, function() {
+
+				$('body, html').animate({
+	              scrollTop: elPosition
+	            }, 400);
+
+			});
 			counter = counter + 3;
 
 			// Find the last visible element
 			var lastVisibileElm = els.filter(":visible").last();
 			var elPosition = lastVisibileElm.offset().top - (elHeight * 2);
 
-			$('body, html').animate({
-              scrollTop: elPosition
-            }, 800);
 
 		} else {
 			loadMore.fadeOut();

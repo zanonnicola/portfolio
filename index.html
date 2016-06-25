@@ -62,7 +62,7 @@
 					</div>
 				</div>
 				<a href="#0" class="cta-wrapper">
-					<div class="cta" title="Get Notify">Get Notify</div>	
+					<div class="cta" title="Get Notify" id="notify">Get Notify</div>	
 					<span></span>
 				</a>
 			</div>
@@ -97,13 +97,13 @@
 				<div class="left-distance">
 					<div class="grid__box">
 						<div class="grid__box-col box">
-							<div class="box__content">
+							<div class="box__content" data-id="fed">
 								<img src="./img/icon1.svg" alt="Front-end">
 								<h4>Front-end<br />Development</h4>
 							</div>
 						</div>
 						<div class="grid__box-col box">
-							<div class="box__content">
+							<div class="box__content" data-id="dp">
 								<img src="./img/icon2.svg" alt="Design">
 								<h4>Design &amp;<br />Prototyping</h4>
 							</div>
@@ -111,13 +111,13 @@
 					</div>
 					<div class="grid__box">
 						<div class="grid__box-col box">
-							<div class="box__content">
+							<div class="box__content" data-id="ta">
 								<img src="./img/icon3.svg" alt="Tooling">
 								<h4>Tooling &amp;<br />Automation</h4>
 							</div>
 						</div>
 						<div class="grid__box-col box">
-							<div class="box__content">
+							<div class="box__content" data-id="sm">
 								<img src="./img/icon4.svg" alt="SEO &amp; Marketing">
 								<h4>SEO &amp;<br />Marketing</h4>
 							</div>
@@ -126,6 +126,107 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="overlay" id="fed">
+			<article class="overlay-content">
+				<div class="wrapper">
+					<a href="#0" class="close">[X] Close</a>
+					<h3>.03 Skills</h3>
+					<h4>Front-end Development</h4>
+					<ul>
+						<li>&rsaquo; HTML5</li>
+						<li>&rsaquo; CSS3</li>
+						<li>&rsaquo; SASS/LESS</li>
+						<li>&rsaquo; Javascript</li>
+						<li>&rsaquo; PHP</li>
+						<li>&rsaquo; Perl (basic)</li>
+					</ul>
+					<hr class="line" />
+					<ul>
+						<li>&rsaquo; Responsive Web Design</li>
+						<li>&rsaquo; Mobile-first</li>
+						<li>&rsaquo; Offline-first</li>
+						<li>&rsaquo; Progressive Enhancement</li>
+						<li>&rsaquo; Wordpress</li>
+						<li>&rsaquo; Performance Optimisation</li>
+						<li>&rsaquo; Cross-browser testing</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+		<div class="overlay" id="dp">
+			<article class="overlay-content">
+				<div class="wrapper">
+					<a href="#0" class="close">[X] Close</a>
+					<h3>.03 Skills</h3>
+					<h4>Design &amp; Prototyping</h4>
+					<ul>
+						<li>&rsaquo; Sketch</li>
+						<li>&rsaquo; Photoshop</li>
+						<li>&rsaquo; Indesign</li>
+						<li>&rsaquo; Illustrator</li>
+						<li>&rsaquo; Framer.js</li>
+					</ul>
+					<hr class="line" />
+					<ul>
+						<li>&rsaquo; Design experiences for multiple device types and contexts</li>
+						<li>&rsaquo; User-centered design methodologies</li>
+						<li>&rsaquo; Understanding of usability</li>
+						<li>&rsaquo; User flows, mocks, and prototypes</li>
+						<li>&rsaquo; Wireframes</li>
+						<li>&rsaquo; UX/UI</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+		<div class="overlay" id="ta">
+			<article class="overlay-content">
+				<div class="wrapper">
+					<a href="#0" class="close">[X] Close</a>
+					<h3>.03 Skills</h3>
+					<h4>Tooling &amp; Automation</h4>
+					<ul>
+						<li>&rsaquo; Gulp / Grunt</li>
+						<li>&rsaquo; NPM</li>
+						<li>&rsaquo; MAMP / Vagrant</li>
+						<li>&rsaquo; Git</li>
+						<li>&rsaquo; Bower</li>
+					</ul>
+					<hr class="line" />
+					<ul>
+						<li>&rsaquo; Continuous deployment</li>
+						<li>&rsaquo; Automate Front-end process</li>
+						<li>&rsaquo; Create development workflow</li>
+						<li>&rsaquo; Processes optimisation</li>
+					</ul>
+				</div>
+			</article>
+		</div>
+		<div class="overlay" id="sm">
+			<article class="overlay-content">
+				<div class="wrapper">
+					<a href="#0" class="close">[X] Close</a>
+					<h3>.03 Skills</h3>
+					<h4>SEO &amp; Marketing</h4>
+					<ul>
+						<li>&rsaquo; SEOmoz tools</li>
+						<li>&rsaquo; Webmaster Tools</li>
+						<li>&rsaquo; Google AdWords</li>
+						<li>&rsaquo; Google Analytic</li>
+						<li>&rsaquo; Excel</li>
+					</ul>
+					<hr class="line" />
+					<ul>
+						<li>&rsaquo; On-site/Off-site optimisation</li>
+						<li>&rsaquo; Technical SEO &amp; Local SEO</li>
+						<li>&rsaquo; Data Gathering &amp; Analysis</li>
+						<li>&rsaquo; User Journey Analysis</li>
+						<li>&rsaquo; Site Migrations</li>
+						<li>&rsaquo; Conversion Rate Optimisation</li>
+					</ul>
+				</div>
+			</article>
+		</div>
 
 		<section class="section">
 			<div class="wrapper">
@@ -300,6 +401,17 @@
 			</div>
 		</div>
 	</footer>
+
+	<aside class="banner">
+		<div class="wrapper">
+			<div class="banner__content">
+				<p>Subscribe to push notification (In development)</p>
+				<a href="#0" id="yes">yes</a>
+				<a href="#0" id="no">no</a>
+			</div>
+		</div>
+	</aside>
+
 
   	<script async src="./js/build/bundle.js"></script>
 

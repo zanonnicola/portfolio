@@ -400,5 +400,133 @@ h1,h2,h3,h4,h5,h6 {
 .hidden {
 	display: none;
 }
+
+
+/* ==========================================================================
+   OVERLAY
+   ========================================================================== */
+
+.overlay {
+	position: fixed;
+	background-color: $pink;
+	top:0;
+	left:0;
+	bottom:0;
+	width: 100%;
+	z-index: 11;
+	opacity: 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transform: translateY(-100%);
+	&.overlay-at-the-end {
+		opacity: 1;
+		transform: translateY(0);	
+	}
+	&.overlay-at-the-beginning {
+		opacity: 0;
+		transform: translateY(100%);	
+	}
+}
+.overlay-content {
+	margin: 20px auto;
+	max-width: $maxWidth;
+	opacity: 0;
+	transition: opacity 0.5 ease;
+	&.overlay-content__visible {
+		opacity: 1;
+	}
+	h3 {
+		color: #fff;
+		text-transform: uppercase;
+		@include setFont(2.6, 3, true);
+		margin: 0;
+	}
+	h4 {
+		color: #fff;
+		@include setFont(2, 2.3, true);
+		margin: 0 0 0 $padding/2;
+		@include breakpoint(tablet) {
+			margin: 0 0 0 $padding;
+		}
+	}
+	ul {
+		margin: $padding 0 0 $padding/2;
+		@include breakpoint(tablet) {
+			margin: $padding 0 0 $padding;
+		}
+		li {
+			color: #fff;
+			@include setFont(1.8, 2, true);
+			margin-bottom: 5px;
+		}
+	}
+}
+.ov-hidden {
+	overflow: hidden;
+}
+.line {
+	border: none;
+	display: block;
+	height: 1px;
+	background-color: #fff;
+	margin-top: $padding;
+}
+.close {
+	display: block;
+	text-align: right;
+	color : #fff;
+	@include setFont(1.4, 1.4);
+	font-weight: 700;
+	margin-bottom: $padding/2;
+	transition: opacity 0.5s ease;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+
+/* ==========================================================================
+   BANNER
+   ========================================================================== */
+.banner {
+	background-color: $pink;
+	position: fixed;
+	left:0;
+	width: 100%;
+	z-index: 16;
+	top: 0;
+	opacity: 0;
+	transition: all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+	transform: translateY(-100%);
+	&.overlay-at-the-end {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.banner__content {
+	padding:10px;
+	text-align: center;
+	p {
+		color: #fff;
+		margin: 0 0 10px 0;
+		font-weight: 700;
+	}
+	a {
+		display: inline-block;
+		border: 1px solid #fff;
+		padding: 5px;
+		text-transform: uppercase;
+		font-weight: 700;
+		width: 40px;
+		height: 30px;
+		line-height: 20px;
+		color: #fff;
+		margin-right: 10px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
 @import "animations.scss";
 @import "footer.scss";
