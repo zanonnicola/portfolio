@@ -45,14 +45,15 @@ html {
 body {
 	background-color: #F2F1F1;
 	font-family:'bt_mono', Courier, monospace;
-	font-weight:400; 
+	font-weight:400;
 	font-style:normal;
 	margin:0;
 	padding:0;
 	color: $black;
 	@include font-size(1.6);
 	line-height:23px;
-	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
 }
 img {
   max-width: 100%;
@@ -84,8 +85,8 @@ p {
 		}
 	}
 }
-a:hover, a:active, a:focus { 
-	outline: none; 
+a:hover, a:active, a:focus {
+	outline: none;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-weight: 700;
@@ -421,11 +422,11 @@ h1,h2,h3,h4,h5,h6 {
 	transform: translateY(-100%);
 	&.overlay-at-the-end {
 		opacity: 1;
-		transform: translateY(0);	
+		transform: translateY(0);
 	}
 	&.overlay-at-the-beginning {
 		opacity: 0;
-		transform: translateY(100%);	
+		transform: translateY(100%);
 	}
 }
 .overlay-content {
