@@ -1,6 +1,7 @@
 {
   "name": "Nicola Zanon Portfolio",
-  "short_name": "NZ Portfolio",
+  "short_name": "NZ Webshop",
+  "description": "Webshop: Progressive Web App, Wordpress Theme, SPA, Mobile-first websites",
   "icons": [{
     "src": "img/icons/icon-128x128.png",
       "sizes": "128x128",
@@ -26,6 +27,5 @@
   "display": "standalone",
   "background_color": "#F4F4F0",
   "theme_color": "#FC1F70",
-  "name": "Nicola Zanon Portfolio",
   "gcm_sender_id": "265012696105"
 }
