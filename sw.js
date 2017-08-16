@@ -10,7 +10,7 @@ var cacheEls = [
 	'./img/icons/icon-2015.svg'
 ];
 
-var CACHE_VERSION = 'v5a';
+var CACHE_VERSION = 'v6a';
 
 
 self.addEventListener('install', function(e) {
