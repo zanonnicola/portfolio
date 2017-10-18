@@ -17,9 +17,11 @@ self.addEventListener('install', function(e) {
 	e.waitUntil(
 		caches.open(CACHE_VERSION).then(function(cache) {
 			return cache.addAll(cacheEls).catch(function (error) {
-            	console.error('Error in install handler:', error);
-        	});
-		})
+        console.error('Error in install handler:', error);
+      });
+		}).then(function() {
+      return self.skipWaiting();
+    })
 	);
 });
 
@@ -35,6 +37,9 @@ self.addEventListener('activate', function (event) {
                     }
                 })
             );
+        }).then(function() {
+          console.log('[ServiceWorker] Claiming clients for version', CACHE_VERSION);
+          return self.clients.claim();
         })
     );
 });
