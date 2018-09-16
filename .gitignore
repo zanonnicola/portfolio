@@ -3,3 +3,5 @@ public/
 .sass-cache/
 sketch/
 *.DS_Store
+firebase-debug.log
+.vscode

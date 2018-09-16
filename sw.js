@@ -1,53 +1,53 @@
 importScripts('./cache-polyfill.js');
 
 var cacheEls = [
-	'./',
-	'./index.html',
-	'./css/global.css',
-	'./js/build/bundle.js',
-	'./fonts/bt_mono-Bold_gdi.svg',
-	'./fonts/bt_mono-Regular_gdi.svg',
-	'./img/icons/icon-2015.svg'
+  './',
+  './index.html',
+  './css/global.css',
+  './js/build/bundle.js',
+  './fonts/bt_mono-Bold_gdi.svg',
+  './fonts/bt_mono-Regular_gdi.svg',
+  './img/icons/icon-2015.svg'
 ];
 
-var CACHE_VERSION = 'v6a';
+var CACHE_VERSION = 'v7a';
 
 
-self.addEventListener('install', function(e) {
-	e.waitUntil(
-		caches.open(CACHE_VERSION).then(function(cache) {
-			return cache.addAll(cacheEls).catch(function (error) {
+self.addEventListener('install', function (e) {
+  e.waitUntil(
+    caches.open(CACHE_VERSION).then(function (cache) {
+      return cache.addAll(cacheEls).catch(function (error) {
         console.error('Error in install handler:', error);
       });
-		}).then(function() {
+    }).then(function () {
       return self.skipWaiting();
     })
-	);
+  );
 });
 
 self.addEventListener('activate', function (event) {
-    var cacheWhitelist = ['v5a'];
-    event.waitUntil(
-        caches.keys().then(function (cacheNames) {
-            return Promise.all(
-                // Loop through all of the caches in the service worker and deleting any caches which aren't defined in the cache whitelist.
-                cacheNames.map(function (cacheName) {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        }).then(function() {
-          console.log('[ServiceWorker] Claiming clients for version', CACHE_VERSION);
-          return self.clients.claim();
+  var cacheWhitelist = ['v7a'];
+  event.waitUntil(
+    caches.keys().then(function (cacheNames) {
+      return Promise.all(
+        // Loop through all of the caches in the service worker and deleting any caches which aren't defined in the cache whitelist.
+        cacheNames.map(function (cacheName) {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
         })
-    );
+      );
+    }).then(function () {
+      console.log('[ServiceWorker] Claiming clients for version', CACHE_VERSION);
+      return self.clients.claim();
+    })
+  );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   event.respondWith(
     caches.match(event.request)
-      .then(function(response) {
+      .then(function (response) {
         // Cache hit - return response
         if (response) {
           return response;
@@ -60,9 +60,9 @@ self.addEventListener('fetch', function(event) {
         var fetchRequest = event.request.clone();
 
         return fetch(fetchRequest).then(
-          function(response) {
+          function (response) {
             // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
+            if (!response || response.status !== 200 || response.type !== 'basic') {
               return response;
             }
 
@@ -73,7 +73,7 @@ self.addEventListener('fetch', function(event) {
             var responseToCache = response.clone();
 
             caches.open(CACHE_VERSION)
-              .then(function(cache) {
+              .then(function (cache) {
                 cache.put(event.request, responseToCache);
               });
 
@@ -81,5 +81,5 @@ self.addEventListener('fetch', function(event) {
           }
         );
       })
-    );
+  );
 });
