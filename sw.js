@@ -1,5 +1,3 @@
-importScripts('./cache-polyfill.js');
-
 var cacheEls = [
   './',
   './index.html',
@@ -7,6 +5,8 @@ var cacheEls = [
   './js/build/bundle.js',
   './fonts/bt_mono-Bold_gdi.svg',
   './fonts/bt_mono-Regular_gdi.svg',
+  './fonts/bt_mono-Bold_gdi.woff',
+  './fonts/bt_mono-Regular_gdi.woff',
   './img/icons/icon-2015.svg'
 ];
 
