@@ -10,7 +10,7 @@ var cacheEls = [
   './img/icons/icon-2015.svg'
 ];
 
-var CACHE_VERSION = 'v7a';
+var CACHE_VERSION = 'v8';
 
 
 self.addEventListener('install', function (e) {
@@ -26,7 +26,7 @@ self.addEventListener('install', function (e) {
 });
 
 self.addEventListener('activate', function (event) {
-  var cacheWhitelist = ['v7a'];
+  var cacheWhitelist = ['v8'];
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
